@@ -71,4 +71,5 @@ public class Display {
 		System.out.println("Successfully created new canvas.");
 		return true;
 	}
+	
 }
