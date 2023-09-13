@@ -9,7 +9,7 @@ public class GameLoop {
 	private BlockEnum[] blockEnums;
 
 	public GameLoop() {
-		currentGameDisplay = new Display("JAVA TEST GAME", 400, 800);
+		currentGameDisplay = new Display("JAVA TEST GAME", 850, 800);
 		blockEnums = BlockEnum.values();
 	}
 

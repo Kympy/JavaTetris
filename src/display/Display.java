@@ -4,13 +4,11 @@ import javax.swing.*;
 import java.awt.event.WindowListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
-import java.awt.Canvas;
-import java.awt.Dimension;
 
-public class Display {
+public class Display{
 	private JFrame mainFrame;
-	private Canvas mainCanvas;
-
+	private GamePanel gamePanel;
+	
 	private String frameTitle;
 	private int frameWidth, frameHeight;
 
@@ -39,6 +37,13 @@ public class Display {
 			System.out.println("Check frame size not be ZERO.");
 			return false;
 		}
+		
+		gamePanel = null;
+		gamePanel = new GamePanel(frameWidth, frameHeight);
+		
+		mainFrame.setContentPane(gamePanel);
+		System.out.println("Successfully created new panel.");
+		
 		mainFrame.setSize(frameWidth, frameHeight);
 		mainFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		// 종료 선택 옵션 추가
@@ -61,15 +66,6 @@ public class Display {
 		mainFrame.setVisible(true);
 		System.out.println("Successfully created new frame.");
 
-		mainCanvas = new Canvas();
-		mainCanvas.setPreferredSize(new Dimension(frameWidth, frameHeight));
-		mainCanvas.setMaximumSize(new Dimension(frameWidth, frameHeight));
-		mainCanvas.setMinimumSize(new Dimension(frameWidth, frameHeight));
-
-		mainFrame.add(mainCanvas);
-		mainFrame.pack();
-		System.out.println("Successfully created new canvas.");
 		return true;
 	}
-	
 }
