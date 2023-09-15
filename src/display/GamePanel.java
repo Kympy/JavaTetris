@@ -33,6 +33,8 @@ public class GamePanel extends JPanel {
 		
 		drawDefaultGameArea(g);
 		
+		drawBlocks(g);
+		
 		g.setColor(Color.yellow);
 
 		g.fill3DRect(50, 50, 30, 30, true);
@@ -48,11 +50,14 @@ public class GamePanel extends JPanel {
 		g.setColor(areaColor);
 		g.fill3DRect(areaOffsetX, areaOffsetY, gameAreaWidth, gameAreaHeight - 100, true);
 	
-		for(int i = 0; i < gameAreaWidth; i++) {
-			
-		}
 	}
-	public void UpdateBlockArray() {
-		
+	private void drawBlocks(Graphics g) {
+		if (this.blocksArray == null || this.blocksArray.length == 0) return;
+	
+	}
+	// 임시 캐싱 블럭 배열
+	private int[] blocksArray;
+	public void UpdateBlockArray(int[] newBlocksArray) {
+		this.blocksArray = newBlocksArray;
 	}
 }

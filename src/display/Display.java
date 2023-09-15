@@ -68,4 +68,7 @@ public class Display{
 
 		return true;
 	}
+	public void draw(int[] newBlockArray) {
+		gamePanel.UpdateBlockArray(newBlockArray);
+	}
 }

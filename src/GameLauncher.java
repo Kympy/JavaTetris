@@ -5,8 +5,22 @@ public class GameLauncher {
 
 	public static void main(String[] args) {
 
+		
 		currentGame = new GameLoop();
-
-		return;
+		System.out.println("Game Loop is started.");
+		
+		while(true) {
+			
+			try {
+				currentGame.Loop();
+				System.out.println("Loop");
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				break;
+			}
+		}
+		
+		System.out.println("Game Loop is finished.");
 	}
 }
