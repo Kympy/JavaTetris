@@ -6,4 +6,5 @@ public class Settings {
 	public static int gameHeight = 20;
 	public static int windowWidth = pixelSize * gameWidth * 2;
 	public static int windowHeight = pixelSize * gameHeight + 100;
+	public static int gameLoopInterval = 1000;
 }

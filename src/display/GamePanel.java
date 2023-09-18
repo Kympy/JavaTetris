@@ -30,7 +30,7 @@ public class GamePanel extends JPanel {
 		// 블럭 정보 그리기
 		drawBlocks(g);
 	
-		System.out.println("Print");
+		//System.out.println("Print");
 	}
 	private void drawDefaultGameArea(Graphics g) {
 		

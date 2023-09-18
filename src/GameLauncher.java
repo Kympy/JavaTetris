@@ -9,15 +9,8 @@ public class GameLauncher {
 		currentGame = new GameLoop();
 		System.out.println("Game Loop is started.");
 		
-		while(true) {
-			
-			try {
-				currentGame.loop();
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-				break;
-			}
+		while(currentGame.getIsEnd() == false) {
+			currentGame.loop();
 		}
 		
 		System.out.println("Game Loop is finished.");

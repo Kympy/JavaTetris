@@ -5,11 +5,17 @@ import gameData.Pixel;
 import javax.swing.*;
 import java.awt.event.WindowListener;
 import java.awt.event.WindowEvent;
+import java.awt.Frame;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 
 public class Display{
 	private JFrame mainFrame;
 	private GamePanel gamePanel;
+	public GamePanel getPanel() {
+		return gamePanel;
+	}
 	
 	private String frameTitle;
 	private int frameWidth, frameHeight;
@@ -43,7 +49,9 @@ public class Display{
 		gamePanel = null;
 		gamePanel = new GamePanel(frameWidth, frameHeight);
 		
-		mainFrame.setContentPane(gamePanel);
+		mainFrame.add(gamePanel);
+		//mainFrame.setContentPane(gamePanel);
+		
 		System.out.println("Successfully created new panel.");
 		
 		mainFrame.setSize(frameWidth, frameHeight);
@@ -65,7 +73,12 @@ public class Display{
 		});
 		mainFrame.setResizable(false);
 		mainFrame.setLocationRelativeTo(null);
+		
+		if (mainFrame.getState() == Frame.ICONIFIED) {
+			mainFrame.setState(Frame.NORMAL);
+		}
 		mainFrame.setVisible(true);
+		mainFrame.requestFocus();
 		System.out.println("Successfully created new frame.");
 
 		return true;
