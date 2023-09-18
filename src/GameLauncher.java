@@ -12,8 +12,7 @@ public class GameLauncher {
 		while(true) {
 			
 			try {
-				currentGame.Loop();
-				System.out.println("Loop");
+				currentGame.loop();
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

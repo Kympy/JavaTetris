@@ -1,5 +1,7 @@
 package display;
 
+import gameData.Pixel;
+
 import javax.swing.*;
 import java.awt.event.WindowListener;
 import java.awt.event.WindowEvent;
@@ -68,7 +70,8 @@ public class Display{
 
 		return true;
 	}
-	public void draw(int[] newBlockArray) {
-		gamePanel.UpdateBlockArray(newBlockArray);
+	public void draw(Pixel[] newBlockArray) {
+		gamePanel.updateBlockArray(newBlockArray);
+		gamePanel.repaint();
 	}
 }
