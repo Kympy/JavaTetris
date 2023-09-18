@@ -256,4 +256,21 @@ public class GameLoop {
 		}
 		System.out.println("Rotate");
 	}
+	private void getRotatedArray(int[] arg1DArray) {
+		// 여기서 2차원으로 변환
+		
+		// 변환하고 기준 잡기
+		int pivot = arg1DArray[arg1DArray.length];
+		
+		// 각 좌표별로 기준과 떨어진 거리 계산하고 로컬좌표로 변경. 차이값은 저장해둠.
+		int[][] diffFromPivot = new int[2][arg1DArray.length];
+		for(int i = 0; i < arg1DArray.length; i++) {
+			for(int j = 0; j < 2; j++) {
+				//diffFromPivot[j][i] = 
+			}
+		}
+		// 회전행렬을 곱한다.
+		
+		// 저장된 차이값을 다시 더해 기존 월드 좌표로 변경
+	}
 }
